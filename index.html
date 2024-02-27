@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>YAY! It's BOGO</h1>
+    </header>
+    <div class="addtocartpg">
+        <form>
+            <section class="product" id="1Unit" onclick="selectRadio('1'); showHideDetails('details1')">
+                <input type="radio" name="item" value="1" id="radio1" />
+                <label for="radio1">
+                    <h3>1 Unit <span class="offers">10% Off</span> <span class="hdright">$10.00 USD</span> </h3>
+                </label>
+                <span class="actprice"> $24.00 USD</span>
+                <div class="details" id="details1">
+                    <span>#1</span> <label for="size1">Size:</label>
+                    <select id="size1" name="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <label for="color1">Color:</label>
+                    <select id="color1" name="color">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="product" id="2Unit " onclick="selectRadio('2'); showHideDetails('details2')">
+
+                <input type="radio" name="item" value="2" id="radio2" />
+                <label for="radio2">
+                    <h3>2 Unit <span class="offers">20% Off</span>
+                        <span class="mop">Most Popular</span>
+
+                        <span class="hdright">$18.00 USD</span>
+                    </h3>
+                </label>
+
+                <span class="actprice"> $24.00 USD</span>
+                <div class="details" id="details2">
+                    <span>#1</span> <label for="size2">Size:</label>
+                    <select id="size2" name="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <label for="color2">Color:</label>
+                    <select id="color2" name="color">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+                <div class="details" id="details2">
+                    <span>#2</span> <label for="size21">Size:</label>
+                    <select id="size21" name="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <label for="color21">Color:</label>
+                    <select id="color21" name="color">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+            </section>
+            <section class="product" id="3Unit" onclick="selectRadio('3'); showHideDetails('details3')">
+                <input type="radio" name="item" value="3" id="radio3" />
+                <label for="radio3">
+                    <h3>3 Unit <span class="offers">30% Off</span> <span class="hdright">$24.00 USD</span> </h3>
+                </label>
+                <span class="actprice"> $24.00 USD</span>
+                <div class="details" id="details3">
+                    <span>#1</span> <label for="size3">Size:</label>
+                    <select id="size3" name="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <label for="color3">Color:</label>
+                    <select id="color3" name="color">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+                <div class="details" id="details3">
+                    <span>#2</span> <label for="size31">Size:</label>
+                    <select id="size31" name="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <label for="color31">Color:</label>
+                    <select id="color31" name="color">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+                <div class="details" id="details3">
+                    <span>#3</span> <label for="size32">Size:</label>
+                    <select id="size32" name="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <label for="color32">Color:</label>
+                    <select id="color32" name="color">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="total ">
+                <p class="freedel">Free Delivery</p>
+                <p>Total: $18.00 USD</p>
+            </section>
+            <div class="addtocart "> <button id="myButton">Add To Cart</button></div>
+
+        </form>
+
+    </div>
+    <script>
+        function selectRadio(itemValue) {
+            var radios = document.getElementsByName('item');
+            radios.forEach(function (radio) {
+                if (radio.value === itemValue) {
+                    radio.checked = true;
+                } else {
+                    radio.checked = false;
+                }
+            });
+            showHideDetails('details' + itemValue);
+        }
+
+        function showHideDetails(detailsId) {
+            var allDetails = document.querySelectorAll('.details');
+            allDetails.forEach(function (detail) {
+                if (detail.id === detailsId) {
+                    detail.style.display = 'block';
+
+                    detail.classList.add('selected');
+            detail.classList.remove('selected');
+                } else {
+                    detail.style.display = 'none';
+                    detail.classList.add('selected');
+            detail.classList.remove('selected');
+                }
+            });
+        }
+        function calculateTotalPrice(selectedItem) {
+            var totalPrice = 0;
+            switch (selectedItem) {
+                case '1':
+                    totalPrice = 18;
+                    break;
+                case '2':
+                    totalPrice = 20;
+                    break;
+                case '3':
+                    totalPrice = 24;
+                    break;
+            }
+            return totalPrice;
+        }
+
+        const radioButtons = document.querySelectorAll('input[name="item"]');
+
+        radioButtons.forEach(radioButton => {
+            radioButton.addEventListener('click', function () {
+                const selectedItem = this.value;
+                const totalPrice = calculateTotalPrice(selectedItem);
+                console.log(totalPrice);
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>
